@@ -1,0 +1,50 @@
+[project]
+name = "tiwut_api"
+version = "1.0.0"
+language = "c"
+
+[env]
+APP_ENV = "production"
+PORT = "8888"
+
+[tasks.clean]
+command = "bash clean.sh"
+
+[tasks.clean.mac]
+command = "bash clean.sh"
+
+[tasks.build]
+command = "make all"
+
+[tasks.build.mac]
+command = "make all"
+
+[tasks.build-cfeel]
+command = "make build-cfeel"
+
+[tasks.build-cfeel.mac]
+command = "make build-cfeel"
+
+[tasks.samples]
+depends_on = ["build"]
+command = "make samples"
+
+[tasks.samples.mac]
+depends_on = ["build"]
+command = "make samples"
+
+[tasks.run]
+depends_on = ["build"]
+command = "./bin/tiwut-api-server"
+
+[tasks.run.mac]
+depends_on = ["build"]
+command = "./bin/tiwut-api-server"
+
+[tasks.test]
+depends_on = ["samples"]
+command = "bash sample/bash/50_usecases.sh"
+
+[tasks.test.mac]
+depends_on = ["samples"]
+command = "bash sample/bash/50_usecases.sh"

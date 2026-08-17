@@ -1,0 +1,401 @@
+
+
+[data-theme="theme-light-gray-modern"] {
+
+    --bg-primary: hsl(0, 50%, 98%);
+    --bg-secondary: hsl(0, 50%, 95%);
+    --text-primary: hsl(0, 50%, 10%);
+    --text-secondary: hsl(0, 50%, 40%);
+    --accent-color: hsl(0, 50%, 40%);
+    --accent-hover: hsl(0, 50%, 50%);
+    --border-color: hsl(0, 50%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-gray-clean"] {
+
+    --bg-primary: hsl(0, 20%, 98%);
+    --bg-secondary: hsl(0, 20%, 95%);
+    --text-primary: hsl(0, 20%, 10%);
+    --text-secondary: hsl(0, 20%, 40%);
+    --accent-color: hsl(0, 20%, 40%);
+    --accent-hover: hsl(0, 20%, 50%);
+    --border-color: hsl(0, 20%, 85%);
+    --border-radius: 0px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-gray-old"] {
+
+    --bg-primary: hsl(0, 30%, 98%);
+    --bg-secondary: hsl(0, 30%, 95%);
+    --text-primary: hsl(0, 30%, 10%);
+    --text-secondary: hsl(0, 30%, 40%);
+    --accent-color: hsl(0, 30%, 40%);
+    --accent-hover: hsl(0, 30%, 50%);
+    --border-color: hsl(0, 30%, 85%);
+    --border-radius: 2px;
+    --font-family: "Times New Roman", Times, serif;
+    --glass-bg: rgba(230, 230, 230, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 0px;
+}
+
+[data-theme="theme-light-gray-rounded"] {
+
+    --bg-primary: hsl(0, 50%, 98%);
+    --bg-secondary: hsl(0, 50%, 95%);
+    --text-primary: hsl(0, 50%, 10%);
+    --text-secondary: hsl(0, 50%, 40%);
+    --accent-color: hsl(0, 50%, 40%);
+    --accent-hover: hsl(0, 50%, 50%);
+    --border-color: hsl(0, 50%, 85%);
+    --border-radius: 24px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-gray-neon"] {
+
+    --bg-primary: hsl(0, 100%, 98%);
+    --bg-secondary: hsl(0, 100%, 95%);
+    --text-primary: hsl(0, 100%, 10%);
+    --text-secondary: hsl(0, 100%, 40%);
+    --accent-color: hsl(0, 100%, 40%);
+    --accent-hover: hsl(0, 100%, 50%);
+    --border-color: hsl(0, 100%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-blue-modern"] {
+
+    --bg-primary: hsl(210, 50%, 98%);
+    --bg-secondary: hsl(210, 50%, 95%);
+    --text-primary: hsl(210, 50%, 10%);
+    --text-secondary: hsl(210, 50%, 40%);
+    --accent-color: hsl(210, 50%, 40%);
+    --accent-hover: hsl(210, 50%, 50%);
+    --border-color: hsl(210, 50%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-blue-clean"] {
+
+    --bg-primary: hsl(210, 20%, 98%);
+    --bg-secondary: hsl(210, 20%, 95%);
+    --text-primary: hsl(210, 20%, 10%);
+    --text-secondary: hsl(210, 20%, 40%);
+    --accent-color: hsl(210, 20%, 40%);
+    --accent-hover: hsl(210, 20%, 50%);
+    --border-color: hsl(210, 20%, 85%);
+    --border-radius: 0px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-blue-old"] {
+
+    --bg-primary: hsl(210, 30%, 98%);
+    --bg-secondary: hsl(210, 30%, 95%);
+    --text-primary: hsl(210, 30%, 10%);
+    --text-secondary: hsl(210, 30%, 40%);
+    --accent-color: hsl(210, 30%, 40%);
+    --accent-hover: hsl(210, 30%, 50%);
+    --border-color: hsl(210, 30%, 85%);
+    --border-radius: 2px;
+    --font-family: "Times New Roman", Times, serif;
+    --glass-bg: rgba(230, 230, 230, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 0px;
+}
+
+[data-theme="theme-light-blue-rounded"] {
+
+    --bg-primary: hsl(210, 50%, 98%);
+    --bg-secondary: hsl(210, 50%, 95%);
+    --text-primary: hsl(210, 50%, 10%);
+    --text-secondary: hsl(210, 50%, 40%);
+    --accent-color: hsl(210, 50%, 40%);
+    --accent-hover: hsl(210, 50%, 50%);
+    --border-color: hsl(210, 50%, 85%);
+    --border-radius: 24px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-blue-neon"] {
+
+    --bg-primary: hsl(210, 100%, 98%);
+    --bg-secondary: hsl(210, 100%, 95%);
+    --text-primary: hsl(210, 100%, 10%);
+    --text-secondary: hsl(210, 100%, 40%);
+    --accent-color: hsl(210, 100%, 40%);
+    --accent-hover: hsl(210, 100%, 50%);
+    --border-color: hsl(210, 100%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-green-modern"] {
+
+    --bg-primary: hsl(140, 50%, 98%);
+    --bg-secondary: hsl(140, 50%, 95%);
+    --text-primary: hsl(140, 50%, 10%);
+    --text-secondary: hsl(140, 50%, 40%);
+    --accent-color: hsl(140, 50%, 40%);
+    --accent-hover: hsl(140, 50%, 50%);
+    --border-color: hsl(140, 50%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-green-clean"] {
+
+    --bg-primary: hsl(140, 20%, 98%);
+    --bg-secondary: hsl(140, 20%, 95%);
+    --text-primary: hsl(140, 20%, 10%);
+    --text-secondary: hsl(140, 20%, 40%);
+    --accent-color: hsl(140, 20%, 40%);
+    --accent-hover: hsl(140, 20%, 50%);
+    --border-color: hsl(140, 20%, 85%);
+    --border-radius: 0px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-green-old"] {
+
+    --bg-primary: hsl(140, 30%, 98%);
+    --bg-secondary: hsl(140, 30%, 95%);
+    --text-primary: hsl(140, 30%, 10%);
+    --text-secondary: hsl(140, 30%, 40%);
+    --accent-color: hsl(140, 30%, 40%);
+    --accent-hover: hsl(140, 30%, 50%);
+    --border-color: hsl(140, 30%, 85%);
+    --border-radius: 2px;
+    --font-family: "Times New Roman", Times, serif;
+    --glass-bg: rgba(230, 230, 230, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 0px;
+}
+
+[data-theme="theme-light-green-rounded"] {
+
+    --bg-primary: hsl(140, 50%, 98%);
+    --bg-secondary: hsl(140, 50%, 95%);
+    --text-primary: hsl(140, 50%, 10%);
+    --text-secondary: hsl(140, 50%, 40%);
+    --accent-color: hsl(140, 50%, 40%);
+    --accent-hover: hsl(140, 50%, 50%);
+    --border-color: hsl(140, 50%, 85%);
+    --border-radius: 24px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-green-neon"] {
+
+    --bg-primary: hsl(140, 100%, 98%);
+    --bg-secondary: hsl(140, 100%, 95%);
+    --text-primary: hsl(140, 100%, 10%);
+    --text-secondary: hsl(140, 100%, 40%);
+    --accent-color: hsl(140, 100%, 40%);
+    --accent-hover: hsl(140, 100%, 50%);
+    --border-color: hsl(140, 100%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-purple-modern"] {
+
+    --bg-primary: hsl(270, 50%, 98%);
+    --bg-secondary: hsl(270, 50%, 95%);
+    --text-primary: hsl(270, 50%, 10%);
+    --text-secondary: hsl(270, 50%, 40%);
+    --accent-color: hsl(270, 50%, 40%);
+    --accent-hover: hsl(270, 50%, 50%);
+    --border-color: hsl(270, 50%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-purple-clean"] {
+
+    --bg-primary: hsl(270, 20%, 98%);
+    --bg-secondary: hsl(270, 20%, 95%);
+    --text-primary: hsl(270, 20%, 10%);
+    --text-secondary: hsl(270, 20%, 40%);
+    --accent-color: hsl(270, 20%, 40%);
+    --accent-hover: hsl(270, 20%, 50%);
+    --border-color: hsl(270, 20%, 85%);
+    --border-radius: 0px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-purple-old"] {
+
+    --bg-primary: hsl(270, 30%, 98%);
+    --bg-secondary: hsl(270, 30%, 95%);
+    --text-primary: hsl(270, 30%, 10%);
+    --text-secondary: hsl(270, 30%, 40%);
+    --accent-color: hsl(270, 30%, 40%);
+    --accent-hover: hsl(270, 30%, 50%);
+    --border-color: hsl(270, 30%, 85%);
+    --border-radius: 2px;
+    --font-family: "Times New Roman", Times, serif;
+    --glass-bg: rgba(230, 230, 230, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 0px;
+}
+
+[data-theme="theme-light-purple-rounded"] {
+
+    --bg-primary: hsl(270, 50%, 98%);
+    --bg-secondary: hsl(270, 50%, 95%);
+    --text-primary: hsl(270, 50%, 10%);
+    --text-secondary: hsl(270, 50%, 40%);
+    --accent-color: hsl(270, 50%, 40%);
+    --accent-hover: hsl(270, 50%, 50%);
+    --border-color: hsl(270, 50%, 85%);
+    --border-radius: 24px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-purple-neon"] {
+
+    --bg-primary: hsl(270, 100%, 98%);
+    --bg-secondary: hsl(270, 100%, 95%);
+    --text-primary: hsl(270, 100%, 10%);
+    --text-secondary: hsl(270, 100%, 40%);
+    --accent-color: hsl(270, 100%, 40%);
+    --accent-hover: hsl(270, 100%, 50%);
+    --border-color: hsl(270, 100%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-orange-modern"] {
+
+    --bg-primary: hsl(30, 50%, 98%);
+    --bg-secondary: hsl(30, 50%, 95%);
+    --text-primary: hsl(30, 50%, 10%);
+    --text-secondary: hsl(30, 50%, 40%);
+    --accent-color: hsl(30, 50%, 40%);
+    --accent-hover: hsl(30, 50%, 50%);
+    --border-color: hsl(30, 50%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-orange-clean"] {
+
+    --bg-primary: hsl(30, 20%, 98%);
+    --bg-secondary: hsl(30, 20%, 95%);
+    --text-primary: hsl(30, 20%, 10%);
+    --text-secondary: hsl(30, 20%, 40%);
+    --accent-color: hsl(30, 20%, 40%);
+    --accent-hover: hsl(30, 20%, 50%);
+    --border-color: hsl(30, 20%, 85%);
+    --border-radius: 0px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-orange-old"] {
+
+    --bg-primary: hsl(30, 30%, 98%);
+    --bg-secondary: hsl(30, 30%, 95%);
+    --text-primary: hsl(30, 30%, 10%);
+    --text-secondary: hsl(30, 30%, 40%);
+    --accent-color: hsl(30, 30%, 40%);
+    --accent-hover: hsl(30, 30%, 50%);
+    --border-color: hsl(30, 30%, 85%);
+    --border-radius: 2px;
+    --font-family: "Times New Roman", Times, serif;
+    --glass-bg: rgba(230, 230, 230, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 0px;
+}
+
+[data-theme="theme-light-orange-rounded"] {
+
+    --bg-primary: hsl(30, 50%, 98%);
+    --bg-secondary: hsl(30, 50%, 95%);
+    --text-primary: hsl(30, 50%, 10%);
+    --text-secondary: hsl(30, 50%, 40%);
+    --accent-color: hsl(30, 50%, 40%);
+    --accent-hover: hsl(30, 50%, 50%);
+    --border-color: hsl(30, 50%, 85%);
+    --border-radius: 24px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}
+
+[data-theme="theme-light-orange-neon"] {
+
+    --bg-primary: hsl(30, 100%, 98%);
+    --bg-secondary: hsl(30, 100%, 95%);
+    --text-primary: hsl(30, 100%, 10%);
+    --text-secondary: hsl(30, 100%, 40%);
+    --accent-color: hsl(30, 100%, 40%);
+    --accent-hover: hsl(30, 100%, 50%);
+    --border-color: hsl(30, 100%, 85%);
+    --border-radius: 8px;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-blur: 12px;
+}

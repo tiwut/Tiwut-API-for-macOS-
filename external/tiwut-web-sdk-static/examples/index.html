@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="theme-dark-blue-modern">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiwut Web SDK Showcase</title>
+  <link rel="stylesheet" href="../core/css/reset.css">
+  <link rel="stylesheet" href="../core/css/utilities.css">
+  
+  <link rel="stylesheet" href="../themes/dark.css">
+  <link rel="stylesheet" href="../themes/light.css">
+  <script type="module" src="../themes/theme-manager.js"></script>
+  
+  <link rel="stylesheet" href="../components/navigation/nav.css">
+  <link rel="stylesheet" href="../components/buttons/button.css">
+  <link rel="stylesheet" href="../components/cards/card.css">
+  <link rel="stylesheet" href="../components/inputs/input.css">
+  <script type="module" src="../components/navigation/nav.js"></script>
+
+  <style>
+    body {
+      background-image: radial-gradient(circle at 15% 50%, rgba(255,255,255,0.05), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(var(--accent-color), 0.1), transparent 25%);
+    }
+    
+    .hero {
+      padding: 6rem 0 4rem 0;
+    }
+    
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .theme-btn {
+      width: 100%;
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="t-main-nav" class="t-nav t-nav-glass">
+    <div class="t-nav-brand">
+      <svg class="t-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Tiwut SDK
+    </div>
+    <button id="t-nav-toggle" class="t-nav-toggle">
+      <svg class="t-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <div class="t-nav-links">
+      <a href="#" class="t-nav-link active">Showcase</a>
+      <a href="#components" class="t-nav-link">Components</a>
+      <a href="#themes" class="t-nav-link">Themes</a>
+    </div>
+  </nav>
+
+  <div class="t-container">
+    
+    <header class="hero t-text-center">
+      <h1 class="t-h1 t-text-primary">Massive Modular SDK</h1>
+      <p class="t-text-secondary" style="margin-top: 1rem; font-size: 1.25rem;">
+        50 Themes. Dependency-Free. Pure Glassmorphism.
+      </p>
+      <div class="t-flex t-justify-center t-gap-4" style="margin-top: 2rem;">
+        <button class="t-btn t-btn-primary">Get Started</button>
+        <button class="t-btn t-btn-glass">Documentation</button>
+      </div>
+    </header>
+
+    <section id="components" style="margin-top: 4rem;">
+      <h2 class="t-h2 t-text-primary" style="margin-bottom: 2rem;">Components</h2>
+      
+      <div class="t-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+        
+        <div class="t-card t-card-glass">
+          <div class="t-card-header">
+            <h3 class="t-card-title">Glassmorphic Card</h3>
+          </div>
+          <div class="t-card-body">
+            <p>This card utilizes pure CSS `backdrop-filter` for a premium blurred effect. It adapts dynamically to all 50 themes.</p>
+            
+            <div class="t-input-group" style="margin-top: 1.5rem;">
+              <label class="t-label">Email Address</label>
+              <input type="email" class="t-input t-input-glass" placeholder="hello@tiwut.com">
+            </div>
+          </div>
+          <div class="t-card-footer">
+            <button class="t-btn t-btn-outline">Cancel</button>
+            <button class="t-btn t-btn-primary">Subscribe</button>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-card-header">
+            <h3 class="t-card-title">Solid UI Components</h3>
+          </div>
+          <div class="t-card-body t-flex t-flex-col t-gap-4">
+            <button class="t-btn t-btn-primary" style="width: 100%;">Primary Action</button>
+            <button class="t-btn t-btn-glass" style="width: 100%;">Secondary Action</button>
+            <button class="t-btn t-btn-outline" style="width: 100%;">Outline Action</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="themes" style="margin-top: 6rem; padding-bottom: 4rem;">
+      <h2 class="t-h2 t-text-primary">50 Dynamic Themes</h2>
+      <p class="t-text-secondary">Click to apply instantly.</p>
+      
+      <div id="theme-buttons" class="theme-grid">
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeContainer = document.getElementById('theme-buttons');
+      const palettes = ['gray', 'blue', 'green', 'purple', 'orange'];
+      const variants = ['modern', 'clean', 'old', 'rounded', 'neon'];
+      
+      palettes.forEach(palette => {
+        variants.forEach(variant => {
+          const darkBtn = document.createElement('button');
+          darkBtn.className = 't-btn t-btn-outline theme-btn';
+          darkBtn.textContent = `Dark ${palette} ${variant}`;
+          darkBtn.onclick = () => window.tiwutThemeManager.setTheme(`theme-dark-${palette}-${variant}`);
+          themeContainer.appendChild(darkBtn);
+          
+          const lightBtn = document.createElement('button');
+          lightBtn.className = 't-btn t-btn-glass theme-btn';
+          lightBtn.textContent = `Light ${palette} ${variant}`;
+          lightBtn.onclick = () => window.tiwutThemeManager.setTheme(`theme-light-${palette}-${variant}`);
+          themeContainer.appendChild(lightBtn);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

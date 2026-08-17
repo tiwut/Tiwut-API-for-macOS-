@@ -1,0 +1,83 @@
+.t-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.t-nav-glass {
+  background: var(--glass-bg, rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(var(--glass-blur, 10px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 10px));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.t-nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.t-nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.t-nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.t-nav-link:hover, .t-nav-link.active {
+  color: var(--accent-color);
+}
+
+.t-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.t-nav-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .t-nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .t-nav-glass .t-nav-links {
+    background: var(--glass-bg, rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(var(--glass-blur, 10px));
+    -webkit-backdrop-filter: blur(var(--glass-blur, 10px));
+  }
+  
+  .t-nav-links.active {
+    display: flex;
+  }
+
+  .t-nav-toggle {
+    display: block;
+  }
+}

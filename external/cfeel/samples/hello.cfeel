@@ -1,0 +1,6 @@
+extern fn puts(str);
+
+fn main() {
+    let x = "Hello from cfeel standard library bindings!";
+    puts(x);
+}

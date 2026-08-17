@@ -1,0 +1,69 @@
+[project]
+name = "enterprise_demo_app"
+version = "2.5.0"
+language = "rust"
+
+[env]
+APP_ENV = "production"
+LOG_LEVEL = "info"
+CARGO_TERM_COLOR = "always"
+RUST_BACKTRACE = "1"
+PORT = "8080"
+
+[tasks.clean]
+command = "cargo clean"
+
+[tasks.clean.windows]
+command = "cargo clean && del /Q /S target\\"
+
+[tasks.clean.mac]
+command = "cargo clean && rm -rf target/"
+
+[tasks.clean.linux]
+command = "cargo clean && rm -rf target/"
+
+[tasks.lint]
+depends_on = ["clean"]
+command = "cargo clippy -- -D warnings"
+
+[tasks.format]
+depends_on = ["lint"]
+command = "cargo fmt -- --check"
+
+[tasks.build]
+depends_on = ["format"]
+command = "cargo build --release"
+
+[tasks.build.windows]
+command = "cargo build --release --target x86_64-pc-windows-msvc"
+
+[tasks.build.mac]
+command = "cargo build --release --target aarch64-apple-darwin"
+
+[tasks.build.linux]
+command = "cargo build --release --target x86_64-unknown-linux-gnu"
+
+[tasks.test]
+depends_on = ["build"]
+command = "cargo test --release"
+
+[tasks.test.windows]
+command = "cargo test --release --target x86_64-pc-windows-msvc"
+
+[tasks.package]
+depends_on = ["test"]
+command = "tar -czf release.tar.gz target/release/enterprise_demo_app"
+
+[tasks.package.windows]
+command = "powershell -Command \"Compress-Archive -Path target\\release\\enterprise_demo_app.exe -DestinationPath release.zip\""
+
+[tasks.deploy]
+depends_on = ["package"]
+command = "echo Deploying $APP_ENV version $PORT..."
+
+[tasks.deploy.windows]
+command = "echo Deploying %APP_ENV% version on port %PORT%..."
+
+[tasks.all]
+depends_on = ["deploy"]
+command = "echo All tasks completed successfully!"

@@ -1,0 +1,48 @@
+.t-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius, 8px);
+  padding: var(--spacing-6, 1.5rem);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.t-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.t-card-glass {
+  background: var(--glass-bg, rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(var(--glass-blur, 10px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 10px));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.t-card-header {
+  margin-bottom: var(--spacing-4, 1rem);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-2, 0.5rem);
+}
+
+.t-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.t-card-body {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.t-card-footer {
+  margin-top: var(--spacing-4, 1rem);
+  padding-top: var(--spacing-4, 1rem);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2, 0.5rem);
+}

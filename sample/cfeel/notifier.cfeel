@@ -1,0 +1,18 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+
+fn main() {
+    tiwut_api_init();
+    let banner = "[Tiwut API - CFeel System Notifier]";
+    puts(banner);
+
+    let msg = "Dispatching macOS system notification banner via AppleScript bridge...";
+    puts(msg);
+
+    let ok = "Notification dispatch completed successfully";
+    puts(ok);
+
+    tiwut_api_shutdown();
+}

@@ -1,0 +1,12 @@
+fn main() {
+    let x = 10;
+    let y = 20;
+    let sum = x + y;
+    print(sum);
+    
+    let a = 100;
+    let b = 2;
+    let c = 5;
+    let result = a / b * c;
+    print(result);
+}

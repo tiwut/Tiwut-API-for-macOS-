@@ -1,0 +1,15 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+extern fn tiwut_caffeinate_start(prevent_display_sleep);
+extern fn tiwut_caffeinate_stop();
+extern fn tiwut_lock_screen();
+extern fn tiwut_system_sleep();
+extern fn tiwut_clear_clipboard();
+extern fn tiwut_send_notification(title, subtitle, msg, sound);
+
+fn main() {
+    let msg = "Tiwut API CFeel SDK Initialized";
+    puts(msg);
+}

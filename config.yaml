@@ -1,0 +1,100 @@
+server:
+  port: 8888
+  host: "127.0.0.1"
+  api_key: "tiwut_secret_token"
+  auth_enabled: false
+  cors_enabled: true
+  max_connections: 128
+  timeout_ms: 5000
+  web_root: "sample/web"
+
+cpu:
+  enabled: true
+  per_core: true
+  load_average: true
+  frequency: true
+
+memory:
+  enabled: true
+  swap: true
+  pressure: true
+  breakdown: true
+
+thermal:
+  enabled: true
+  temperatures: true
+  fans: true
+  thermal_pressure: true
+
+battery:
+  enabled: true
+  health: true
+  cycles: true
+  time_remaining: true
+  capacity: true
+
+storage:
+  enabled: true
+  volumes: true
+  io_stats: true
+
+network:
+  enabled: true
+  interfaces: true
+  throughput: true
+  ping: true
+
+processes:
+  enabled: true
+  list: true
+  kill: true
+  pause_resume: true
+  renice: true
+  max_list_count: 100
+
+apps:
+  enabled: true
+  list: true
+  launch: true
+  quit: true
+  focus: true
+
+display:
+  enabled: true
+  brightness: true
+  sleep: true
+
+audio:
+  enabled: true
+  volume_control: true
+  mute_control: true
+
+power:
+  enabled: true
+  sleep: true
+  restart: true
+  shutdown: true
+  caffeinate: true
+  lock: true
+
+clipboard:
+  enabled: true
+  read: true
+  write: true
+  clear: true
+
+notifications:
+  enabled: true
+  banner: true
+
+system:
+  enabled: true
+  uptime: true
+  os_version: true
+  hardware_model: true
+  serial_number: true
+
+telemetry:
+  enabled: true
+  prometheus_metrics: true
+  overview_endpoint: true

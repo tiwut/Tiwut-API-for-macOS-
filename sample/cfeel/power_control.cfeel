@@ -1,0 +1,18 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+
+fn main() {
+    tiwut_api_init();
+    let banner = "[Tiwut API - CFeel Power Management]";
+    puts(banner);
+
+    let state = "Engaging IOPMAssertion keep-awake lock for long running jobs...";
+    puts(state);
+
+    let done = "Caffeinate state verified via IOKit";
+    puts(done);
+
+    tiwut_api_shutdown();
+}

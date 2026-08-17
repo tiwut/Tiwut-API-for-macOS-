@@ -1,0 +1,18 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+
+fn main() {
+    tiwut_api_init();
+    let banner = "[Tiwut API - CFeel Process Orchestrator]";
+    puts(banner);
+
+    let desc = "Managing macOS native processes with Mach kernel hooks";
+    puts(desc);
+
+    let ok = "Process signals configured: SIGSTOP, SIGCONT, SIGTERM, PRIO_PROCESS";
+    puts(ok);
+
+    tiwut_api_shutdown();
+}

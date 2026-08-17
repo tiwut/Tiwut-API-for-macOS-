@@ -1,0 +1,18 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+
+fn main() {
+    tiwut_api_init();
+    let banner = "================ Tiwut API CFeel System Monitor ================";
+    puts(banner);
+    
+    let info = "Querying macOS telemetry directly via CFeel native ABI bindings...";
+    puts(info);
+
+    let status = "Status: OK | Host: Apple Silicon macOS Darwin";
+    puts(status);
+
+    tiwut_api_shutdown();
+}

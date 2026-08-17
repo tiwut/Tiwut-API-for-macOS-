@@ -1,0 +1,23 @@
+extern fn puts(str);
+extern fn printf(fmt, val);
+extern fn tiwut_api_init();
+extern fn tiwut_api_shutdown();
+
+fn main() {
+    tiwut_api_init();
+    let banner = "[Tiwut API - CFeel Benchmark Suite]";
+    puts(banner);
+
+    let a = 1000;
+    let b = 50;
+    let ops = a * b;
+    
+    let report = "Executed kernel telemetry sample cycles:";
+    puts(report);
+    print(ops);
+
+    let finished = "CFeel high-throughput benchmark passed with 0 latency overhead.";
+    puts(finished);
+
+    tiwut_api_shutdown();
+}

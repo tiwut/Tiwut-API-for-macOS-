@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="theme-dark-blue-modern">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiwut API - macOS Management & Telemetry Center</title>
+  <link rel="stylesheet" href="core/css/reset.css">
+  <link rel="stylesheet" href="core/css/utilities.css">
+  <link rel="stylesheet" href="themes/dark.css">
+  <link rel="stylesheet" href="themes/light.css">
+  <link rel="stylesheet" href="components/navigation/nav.css">
+  <link rel="stylesheet" href="components/buttons/button.css">
+  <link rel="stylesheet" href="components/cards/card.css">
+  <link rel="stylesheet" href="components/inputs/input.css">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="themes/theme-manager.js"></script>
+</head>
+<body>
+
+  <nav class="t-nav t-nav-glass main-navbar">
+    <div class="t-nav-brand">
+      <img src="icons/devices/cpu.svg" class="nav-brand-icon" alt="Tiwut Logo">
+      <span class="brand-title">Tiwut API <span class="badge-macos">macOS Exclusive</span></span>
+    </div>
+    
+    <div class="nav-center-status">
+      <span class="status-dot pulsing" id="conn-dot"></span>
+      <span id="conn-text" class="status-label">Connected (127.0.0.1:8888)</span>
+    </div>
+
+    <div class="nav-actions">
+      <button id="btn-quick-caffeinate" class="t-btn t-btn-glass btn-sm">
+        <img src="icons/devices/terminal.svg" class="btn-icon" alt="">
+        <span id="caffeinate-label">Caffeinate: OFF</span>
+      </button>
+      <button id="btn-quick-lock" class="t-btn t-btn-outline btn-sm">
+        <img src="icons/ui/settings/settings.svg" class="btn-icon" alt=""> Lock Screen
+      </button>
+      <button id="btn-theme-modal" class="t-btn t-btn-primary btn-sm">
+        Theme: Modern
+      </button>
+    </div>
+  </nav>
+
+  <div class="t-container dashboard-container">
+
+    <header class="dash-hero t-text-center">
+      <h1 class="t-h1 t-text-primary hero-title">macOS Native System Telemetry & Control</h1>
+      <p class="t-text-secondary hero-subtitle">
+        High-throughput Mach Kernel & IOKit Telemetry Engine via Tiwut API
+      </p>
+    </header>
+
+    <div class="kpi-grid">
+      <div class="t-card t-card-glass kpi-card">
+        <div class="kpi-icon-wrap bg-blue-tint">
+          <img src="icons/devices/cpu.svg" alt="CPU">
+        </div>
+        <div class="kpi-content">
+          <div class="kpi-label">CPU Usage</div>
+          <div class="kpi-value" id="kpi-cpu">0.0%</div>
+          <div class="kpi-sub" id="kpi-cpu-cores">10 Cores | Load: 0.00</div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass kpi-card">
+        <div class="kpi-icon-wrap bg-purple-tint">
+          <img src="icons/devices/memory-stick.svg" alt="RAM">
+        </div>
+        <div class="kpi-content">
+          <div class="kpi-label">Memory Used</div>
+          <div class="kpi-value" id="kpi-mem">0.0%</div>
+          <div class="kpi-sub" id="kpi-mem-breakdown">0 GB / 0 GB</div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass kpi-card">
+        <div class="kpi-icon-wrap bg-green-tint">
+          <img src="icons/devices/hard-drive.svg" alt="Disk">
+        </div>
+        <div class="kpi-content">
+          <div class="kpi-label">Storage Usage</div>
+          <div class="kpi-value" id="kpi-disk">0.0%</div>
+          <div class="kpi-sub" id="kpi-disk-free">0 GB Free</div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass kpi-card">
+        <div class="kpi-icon-wrap bg-orange-tint">
+          <img src="icons/nature/sun/sun.svg" alt="Thermal">
+        </div>
+        <div class="kpi-content">
+          <div class="kpi-label">Thermal State</div>
+          <div class="kpi-value" id="kpi-thermal">Nominal</div>
+          <div class="kpi-sub" id="kpi-thermal-temp">CPU: 42°C | Fan: 1200 RPM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-sections-grid">
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header card-header-flex">
+          <div class="header-left">
+            <img src="icons/devices/cpu.svg" class="section-icon" alt="">
+            <h3 class="t-card-title">Processor & Cores</h3>
+          </div>
+          <span class="badge" id="cpu-brand-badge">Apple Silicon</span>
+        </div>
+        <div class="t-card-body">
+          <div class="metric-row">
+            <span>Total Processor Load</span>
+            <span id="cpu-load-val" class="font-bold">0%</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div id="cpu-prog-bar" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+
+          <div class="split-stats-grid">
+            <div class="stat-box">
+              <span class="stat-lbl">User Space</span>
+              <span id="cpu-user-val" class="stat-num">0%</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Kernel Space</span>
+              <span id="cpu-sys-val" class="stat-num">0%</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Idle</span>
+              <span id="cpu-idle-val" class="stat-num">100%</span>
+            </div>
+          </div>
+
+          <div class="cores-container" id="cores-grid"></div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header card-header-flex">
+          <div class="header-left">
+            <img src="icons/devices/memory-stick.svg" class="section-icon" alt="">
+            <h3 class="t-card-title">Unified Memory Architecture</h3>
+          </div>
+          <span class="badge badge-success" id="mem-pressure-badge">Pressure: Normal</span>
+        </div>
+        <div class="t-card-body">
+          <div class="metric-row">
+            <span>RAM Utilization</span>
+            <span id="mem-usage-val" class="font-bold">0%</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div id="mem-prog-bar" class="progress-bar-fill bg-purple" style="width: 0%;"></div>
+          </div>
+
+          <div class="mem-breakdown-grid">
+            <div class="breakdown-item"><span class="dot dot-active"></span> Active: <b id="mem-act">0 GB</b></div>
+            <div class="breakdown-item"><span class="dot dot-wired"></span> Wired: <b id="mem-wire">0 GB</b></div>
+            <div class="breakdown-item"><span class="dot dot-comp"></span> Compressed: <b id="mem-comp">0 GB</b></div>
+            <div class="breakdown-item"><span class="dot dot-inact"></span> Inactive: <b id="mem-inact">0 GB</b></div>
+            <div class="breakdown-item"><span class="dot dot-free"></span> Free: <b id="mem-free">0 GB</b></div>
+            <div class="breakdown-item"><span class="dot dot-swap"></span> Swap: <b id="mem-swap">0 GB</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header card-header-flex">
+          <div class="header-left">
+            <img src="icons/devices/computer.svg" class="section-icon" alt="">
+            <h3 class="t-card-title">macOS Hardware & System</h3>
+          </div>
+          <span class="badge" id="sys-uptime-badge">Uptime: 0m</span>
+        </div>
+        <div class="t-card-body system-info-body">
+          <div class="sys-info-row"><span>Operating System:</span><b id="sys-os">macOS 15.0</b></div>
+          <div class="sys-info-row"><span>Darwin Kernel:</span><b id="sys-kernel">-</b></div>
+          <div class="sys-info-row"><span>Host Name:</span><b id="sys-hostname">-</b></div>
+          <div class="sys-info-row"><span>Model Identifier:</span><b id="sys-model">-</b></div>
+          <div class="sys-info-row"><span>Serial Number:</span><b id="sys-serial">-</b></div>
+          <div class="sys-info-row"><span>CPU Architecture:</span><b id="sys-arch">arm64</b></div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header card-header-flex">
+          <div class="header-left">
+            <img src="icons/devices/server.svg" class="section-icon" alt="">
+            <h3 class="t-card-title">Network & Latency</h3>
+          </div>
+          <button id="btn-ping-test" class="t-btn t-btn-glass btn-xs">Test Latency</button>
+        </div>
+        <div class="t-card-body">
+          <div class="net-summary-row">
+            <div>Primary Interface: <b id="net-primary">en0</b></div>
+            <div>Gateway: <b id="net-gateway">192.168.1.1</b></div>
+            <div>Latency: <b id="net-ping" class="text-accent">12.4 ms</b></div>
+          </div>
+          <div class="ifaces-list" id="net-ifaces-list"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="t-card t-card-glass full-width-card" style="margin-top: 2rem;">
+      <div class="t-card-header card-header-flex">
+        <div class="header-left">
+          <img src="icons/devices/terminal.svg" class="section-icon" alt="">
+          <h3 class="t-card-title">Live Process Orchestrator</h3>
+        </div>
+        <div class="header-right-controls">
+          <input type="text" id="proc-search" class="t-input t-input-glass input-sm" placeholder="Filter processes...">
+          <button id="btn-refresh-procs" class="t-btn t-btn-glass btn-sm">Refresh</button>
+        </div>
+      </div>
+      <div class="t-card-body">
+        <div class="table-responsive">
+          <table class="t-table" id="procs-table">
+            <thead>
+              <tr>
+                <th>PID</th>
+                <th>Name</th>
+                <th>User</th>
+                <th>CPU %</th>
+                <th>Memory (RSS)</th>
+                <th>Threads</th>
+                <th>State</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="procs-tbody">
+              <tr><td colspan="8" class="t-text-center">Loading active processes...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-grid" style="margin-top: 2rem;">
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header">
+          <h3 class="t-card-title">Power & Assertion Control</h3>
+        </div>
+        <div class="t-card-body t-flex t-flex-col t-gap-4">
+          <div class="t-flex t-gap-2">
+            <button id="btn-toggle-caffeinate" class="t-btn t-btn-primary full-width">Toggle Caffeinate</button>
+            <button id="btn-lock-screen" class="t-btn t-btn-outline full-width">Lock Screen</button>
+          </div>
+          <div class="t-flex t-gap-2">
+            <button id="btn-sleep-display" class="t-btn t-btn-glass full-width">Sleep Displays</button>
+            <button id="btn-sys-sleep" class="t-btn t-btn-glass full-width">System Sleep</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header">
+          <h3 class="t-card-title">Audio Volume & Mute</h3>
+        </div>
+        <div class="t-card-body t-flex t-flex-col t-gap-4">
+          <div class="metric-row">
+            <span>Master Volume</span>
+            <span id="vol-level-lbl">65%</span>
+          </div>
+          <input type="range" id="vol-slider" class="t-range" min="0" max="100" value="65">
+          <div class="t-flex t-gap-2">
+            <button id="btn-toggle-mute" class="t-btn t-btn-glass full-width">Toggle Mute</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header">
+          <h3 class="t-card-title">Clipboard Manager</h3>
+        </div>
+        <div class="t-card-body t-flex t-flex-col t-gap-4">
+          <textarea id="clip-text" class="t-input t-input-glass clip-textarea" placeholder="Paste or type clipboard text..."></textarea>
+          <div class="t-flex t-gap-2">
+            <button id="btn-read-clip" class="t-btn t-btn-glass full-width">Read Clipboard</button>
+            <button id="btn-write-clip" class="t-btn t-btn-primary full-width">Write Clipboard</button>
+            <button id="btn-clear-clip" class="t-btn t-btn-outline full-width">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card t-card-glass">
+        <div class="t-card-header">
+          <h3 class="t-card-title">macOS Native Notifications</h3>
+        </div>
+        <div class="t-card-body t-flex t-flex-col t-gap-4">
+          <input type="text" id="notif-title" class="t-input t-input-glass input-sm" placeholder="Notification Title" value="Tiwut API Alert">
+          <input type="text" id="notif-msg" class="t-input t-input-glass input-sm" placeholder="Notification Message" value="Telemetry threshold alert on macOS host">
+          <button id="btn-send-notif" class="t-btn t-btn-primary full-width">Dispatch Notification</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="theme-modal-overlay" id="theme-modal">
+      <div class="t-card t-card-glass theme-modal-content">
+        <div class="t-card-header card-header-flex">
+          <h3 class="t-card-title">Select from 50 Themes</h3>
+          <button id="btn-close-theme-modal" class="t-btn t-btn-outline btn-xs">Close</button>
+        </div>
+        <div class="t-card-body">
+          <div class="theme-modal-grid" id="theme-selection-grid"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
